@@ -6,10 +6,19 @@ public class PlayerMovement : MonoBehaviour {
     public float speed = 2.0f;
     bool haveRedKey = false;
     bool haveBlueKey = false;
+    bool canAttack = true;
+    bool isAttacking = false;
+    public Collision2D target = null;
+    Animator animator;
 
-    private void Update() {
+    void Start() {
+        animator = GetComponent<Animator>();
+    }
+
+    void Update() {
         movement();
         rotateToMouse();
+        hitboxDetect();
     }
 
     void movement() {
@@ -28,6 +37,10 @@ public class PlayerMovement : MonoBehaviour {
         if(Input.GetKey(KeyCode.D)) {
             transform.Translate(Vector3.right * speed * Time.deltaTime, Space.World);
         }
+
+        if (Input.GetMouseButtonDown(0) && canAttack) {
+            attack();
+        }
     }
 
     void rotateToMouse() {
@@ -40,6 +53,17 @@ public class PlayerMovement : MonoBehaviour {
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+    }
+
+    void hitboxDetect() {
+        if (target != null) {
+            Debug.Log("Collider detected");
+            if (isAttacking) {
+                if(target.collider.gameObject.tag == "Enemy") {
+                    Destroy(target.collider.gameObject);
+                }
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
@@ -72,5 +96,16 @@ public class PlayerMovement : MonoBehaviour {
                     break;
             }
         }
+    }
+    void attack() {
+        animator.SetBool("isAttacking", true);
+        canAttack = false;
+        isAttacking = true;
+    }
+
+    void finishAttack() {
+        animator.SetBool("isAttacking", false);
+        canAttack = true;
+        isAttacking = false;
     }
 }

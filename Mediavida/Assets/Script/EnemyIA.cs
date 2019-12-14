@@ -11,6 +11,7 @@ public class EnemyIA : MonoBehaviour {
     public float speed = 2.0f;
     RaycastHit2D hit;
     RaycastHit2D hit2;
+    public Collider target;
     float distanceDetect = 1.5f;
 
     void Start() {
@@ -26,23 +27,16 @@ public class EnemyIA : MonoBehaviour {
         float dist = Vector3.Distance(player.transform.position, this.transform.position);
         Vector3 dir = player.transform.position - transform.position;
         hit = Physics2D.Raycast(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(dir.x, dir.y), dist);
-        Debug.DrawRay(transform.position, dir, Color.red);
 
         Vector3 forwardTo = this.transform.TransformDirection(Vector3.right);
         hit2 = Physics2D.Raycast(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(forwardTo.x, forwardTo.y), 1.0f);
-        Debug.DrawRay(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(forwardTo.x, forwardTo.y), Color.yellow);
 
         if (moving) {
             transform.Translate(Vector3.right * speed * Time.deltaTime);
         }
 
         if (patrol) {
-            Debug.Log("Enemy is patrolling correctly");
-
-            Debug.Log("Patrol distance: " + Vector3.Distance(transform.position, player.transform.position));
-
             if (hit2.collider != null) {
-                Debug.LogError(hit2.collider.gameObject.tag);
                 if (hit2.collider.gameObject.tag == "wall") {
                     if (clockwise) {
                         transform.Rotate(0, 0, -90);
@@ -61,9 +55,6 @@ public class EnemyIA : MonoBehaviour {
         }
 
         if (followingPlayer) {
-            Debug.Log("Following Player");
-            Debug.Log("Following Player" + Vector3.Distance(transform.position, player.transform.position));
-
             if(Vector3.Distance(transform.position, player.transform.position) > 1.5f) {
                 playerLastPos = player.transform.position;
                 RotateTowards(playerLastPos);
@@ -77,7 +68,6 @@ public class EnemyIA : MonoBehaviour {
         }
 
         if (goingToLastLoc) {
-            Debug.Log("Checking last position from player");
             RotateTowards(playerLastPos);
 
             if(hit2.collider.gameObject.tag == "Player" || Vector3.Distance(transform.position, player.transform.position) < 1.5f) {
