@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour {
     public float speed = 2.0f;
     bool haveRedKey = false;
     bool haveBlueKey = false;
-    bool alarmIsRunning = false;
 
     private void Update() {
         movement();
@@ -18,12 +17,12 @@ public class PlayerMovement : MonoBehaviour {
             transform.Translate(Vector3.up * speed * Time.deltaTime, Space.World);
         }
 
-        if(Input.GetKey(KeyCode.S)) {
-            transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
-        }
-
         if(Input.GetKey(KeyCode.A)) {
             transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
+        }
+
+        if(Input.GetKey(KeyCode.S)) {
+            transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
         }
 
         if(Input.GetKey(KeyCode.D)) {
@@ -57,18 +56,18 @@ public class PlayerMovement : MonoBehaviour {
                 case "redLock":
                     if (haveRedKey) {
                         Destroy(collision.collider.gameObject);
+                        haveRedKey = false;
                     }
                     break;
                 case "blueLock":
                     if(haveBlueKey) {
                         Destroy(collision.collider.gameObject);
+                        haveBlueKey = false;
                     }
                     break;
                 case "unlocker":
-                    if(haveBlueKey) {
-                        if(Input.GetKey(KeyCode.E)) {
-                           //code for deactive alarm
-                        }
+                    if(Input.GetKey(KeyCode.E)) {
+                        //code for deactive alarm
                     }
                     break;
             }
