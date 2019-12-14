@@ -11,6 +11,8 @@ TagManager:
   - redKey
   - blueKey
   - unlocker
+  - gameManager
+  - Enemy
   layers:
   - Default
   - TransparentFX
