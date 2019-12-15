@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scene/Gremio.unity
+    guid: a551321e8db292145bdf7bc01f1fbfb7
+  - enabled: 1
+    path: Assets/Scene/mediavida.unity
+    guid: b46c6617926ef864e8dac4d2e1b39c44
+  - enabled: 1
+    path: Assets/Scene/intro.unity
+    guid: e0d2c61819925924d9722247fe640895
+  - enabled: 1
     path: Assets/Scene/demo.unity
     guid: 9a84df477bfa5c646bddaa00095fe522
-  - enabled: 1
-    path: Assets/Scene/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
