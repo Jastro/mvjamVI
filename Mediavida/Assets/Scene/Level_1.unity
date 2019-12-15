@@ -164,6 +164,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Actor
       objectReference: {fileID: 0}
+    - target: {fileID: 8831239166515686762, guid: b2c8a32190a90a048b0bb31594baa6c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8831239166515686759, guid: b2c8a32190a90a048b0bb31594baa6c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -648,6 +653,16 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.8546242
       objectReference: {fileID: 0}
+    - target: {fileID: 4753272598992705775, guid: 9367b053d6ce27c429c02ec95371ca53,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753272598992705775, guid: 9367b053d6ce27c429c02ec95371ca53,
+        type: 3}
+      propertyPath: m_Mass
+      value: 100000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9367b053d6ce27c429c02ec95371ca53, type: 3}
 --- !u!1 &277644726
@@ -707,6 +722,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Actor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831239166515686762, guid: b2c8a32190a90a048b0bb31594baa6c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8831239166515686759, guid: b2c8a32190a90a048b0bb31594baa6c9,
         type: 3}
@@ -1386,6 +1406,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Actor
       objectReference: {fileID: 0}
+    - target: {fileID: 8831239166515686762, guid: b2c8a32190a90a048b0bb31594baa6c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8831239166515686759, guid: b2c8a32190a90a048b0bb31594baa6c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1589,6 +1614,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Actor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831239166515686762, guid: b2c8a32190a90a048b0bb31594baa6c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8831239166515686759, guid: b2c8a32190a90a048b0bb31594baa6c9,
         type: 3}
@@ -17215,15 +17245,6 @@ Tilemap:
     second:
       m_TileIndex: 13
       m_TileSpriteIndex: 13
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: -2, y: -1, z: 0}
-    second:
-      m_TileIndex: 0
-      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -39236,8 +39257,8 @@ Tilemap:
       m_ColliderType: 1
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: bd3b62517cc395a4f9ae37d2000d403e, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 0
@@ -39289,8 +39310,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 829541091125011642, guid: e475de49adc0d264ea91246bed7cf164, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2562
     m_Data: {fileID: -4125178664825954558, guid: e475de49adc0d264ea91246bed7cf164,
       type: 3}
@@ -39319,7 +39340,7 @@ Tilemap:
     m_Data: {fileID: -9009738067676214568, guid: e475de49adc0d264ea91246bed7cf164,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 3224
+  - m_RefCount: 3223
     m_Data:
       e00: 1
       e01: 0
@@ -39338,7 +39359,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 3224
+  - m_RefCount: 3223
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -39852,6 +39873,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Actor
       objectReference: {fileID: 0}
+    - target: {fileID: 8831239166515686762, guid: b2c8a32190a90a048b0bb31594baa6c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8831239166515686759, guid: b2c8a32190a90a048b0bb31594baa6c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40311,6 +40337,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Actor
       objectReference: {fileID: 0}
+    - target: {fileID: 8831239166515686762, guid: b2c8a32190a90a048b0bb31594baa6c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8831239166515686759, guid: b2c8a32190a90a048b0bb31594baa6c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -40405,6 +40436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: visionAreaLength
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831239166515686758, guid: b2c8a32190a90a048b0bb31594baa6c9,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2c8a32190a90a048b0bb31594baa6c9, type: 3}
@@ -40741,6 +40777,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Actor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831239166515686762, guid: b2c8a32190a90a048b0bb31594baa6c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8831239166515686759, guid: b2c8a32190a90a048b0bb31594baa6c9,
         type: 3}
@@ -41235,6 +41276,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Actor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831239166515686762, guid: b2c8a32190a90a048b0bb31594baa6c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8831239166515686759, guid: b2c8a32190a90a048b0bb31594baa6c9,
         type: 3}
@@ -42000,6 +42046,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Actor
       objectReference: {fileID: 0}
+    - target: {fileID: 8831239166515686762, guid: b2c8a32190a90a048b0bb31594baa6c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8831239166515686759, guid: b2c8a32190a90a048b0bb31594baa6c9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42269,6 +42320,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Actor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831239166515686762, guid: b2c8a32190a90a048b0bb31594baa6c9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8831239166515686759, guid: b2c8a32190a90a048b0bb31594baa6c9,
         type: 3}

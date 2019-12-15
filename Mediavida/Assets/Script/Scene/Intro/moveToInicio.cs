@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class moveNextLevel : MonoBehaviour {
+public class moveToInicio : MonoBehaviour {
     void Update() {
         if (Input.anyKey) {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(0);
         }
     }
 }

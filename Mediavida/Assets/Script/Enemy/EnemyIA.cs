@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using Quaternion = UnityEngine.Quaternion;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -164,10 +165,12 @@ public class EnemyIA : MonoBehaviour {
         float distance = Vector3.Distance(selfPosition, playerPosition);
         float movement = runMovementSpeed * Time.deltaTime;
 
+        if (distance < 1) {
+            SceneManager.LoadScene(4);
+        }
+
         if (movement >= distance) {
             movement = distance;
-            
-            // TODO: Hit and loose like a biatch
         }
 
         Vector3 finalPosition = Vector3.MoveTowards(selfPosition, playerPosition, movement);
