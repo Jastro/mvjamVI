@@ -368,12 +368,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tras alistarse voluntariamente en la Segunda Guerra Mundial, luch\xF3 contra
+  m_Text: "Tras alistarse voluntariamente en la Segunda Guerra Mundial, lucho contra
     los Nazis en Europa dentro de la unidad de las fuerzas especiales. Especializado
-    en infiltraci\xF3n, Powell Steel era el mejor para sabotear instalaciones militares
+    en infiltracion, Powell Steel era el mejor para sabotear instalaciones militares
     de alto rendimiento.\r\n\r\nTras la guerra, fue ascendido por el gobierno hasta
-    convertirse en agente especial para luchar durante la guerra fr\xEDa contra los
-    Comunistas en Sudam\xE9rica."
+    convertirse en agente especial para luchar durante la guerra fria contra los Comunistas
+    en Sudamerica."
 --- !u!222 &1676171555
 CanvasRenderer:
   m_ObjectHideFlags: 0
