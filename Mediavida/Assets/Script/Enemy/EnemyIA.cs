@@ -23,9 +23,9 @@ public class EnemyIA : MonoBehaviour {
     
     private Vector2 _lastSelfPosition = Vector2.zero;
 
-    public bool _onPatrol = true;
-    public bool _onChase = false;
-    public bool _onReturnPatrol = false;
+    private bool _onPatrol = true;
+    private bool _onChase = false;
+    private bool _onReturnPatrol = false;
     
     public bool followingPlayer = false, goingToLastLoc = false;
     public Vector3 playerLastPos;
