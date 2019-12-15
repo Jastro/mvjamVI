@@ -166,7 +166,7 @@ public class EnemyIA : MonoBehaviour {
         float movement = runMovementSpeed * Time.deltaTime;
 
         if (distance < 1) {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
 
         if (movement >= distance) {

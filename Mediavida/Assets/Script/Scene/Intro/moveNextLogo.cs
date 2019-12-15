@@ -17,7 +17,7 @@ public class moveNextLogo : MonoBehaviour {
 
     void Update() {
         if (currCountdownValue == 0) {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         } else {
             StartCoroutine(StartCountdown());
         }

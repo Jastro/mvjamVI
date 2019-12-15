@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class moveNextLevel : MonoBehaviour {
     void Update() {
         if (Input.anyKey) {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
 }
