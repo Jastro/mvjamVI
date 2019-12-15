@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour {
 
     void hitboxDetect() {
         if (target != null) {
-            Debug.Log("Collider detected");
             if (isAttacking) {
                 if(target.gameObject.tag == "Enemy") {
                     Destroy(target.gameObject);

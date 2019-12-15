@@ -57,11 +57,13 @@ public class EnemyIA : MonoBehaviour {
         Vector2 playerDirection = (Vector2)playerPosition - (Vector2)selfPosition;
         
         float distance = Vector3.Distance(playerPosition, selfPosition);
-        Distance = distance;
         float angle = Vector3.Angle(visionDirection, playerDirection);
+        Distance = distance;
         Anglo = angle;
         if (distance < visionAreaLength && angle < visionAreaWide) {
             RaycastHit2D playerRay = Physics2D.Raycast(selfPosition, playerDirection, distance);
+            Debug.DrawRay(selfPosition, playerDirection, Color.magenta);
+            Debug.Log(playerRay.collider);
             if (playerRay.collider.gameObject.CompareTag("Player")) {
                 return true;
             }
