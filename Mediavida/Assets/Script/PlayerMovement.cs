@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     bool haveBlueKey = false;
     bool canAttack = true;
     bool isAttacking = false;
-    public Collision2D target = null;
+    public Collider2D target = null;
     Animator animator;
 
     void Start() {
@@ -59,8 +59,8 @@ public class PlayerMovement : MonoBehaviour {
         if (target != null) {
             Debug.Log("Collider detected");
             if (isAttacking) {
-                if(target.collider.gameObject.tag == "Enemy") {
-                    Destroy(target.collider.gameObject);
+                if(target.gameObject.tag == "Enemy") {
+                    Destroy(target.gameObject);
                 }
             }
         }

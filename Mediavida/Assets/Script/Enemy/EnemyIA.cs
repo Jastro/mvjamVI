@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Security.Cryptography;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -26,10 +20,10 @@ public class EnemyIA : MonoBehaviour {
     private bool _onPatrol = true;
     private bool _onChase = false;
     private bool _onReturnPatrol = false;
-    
-    public bool followingPlayer = false, goingToLastLoc = false;
-    public Vector3 playerLastPos;
-    float distanceDetect = 1.5f;
+
+    public bool Vision = false;
+    public float Distance = 0.0f;
+    public float Anglo = 0.0f;
     
     /** Cached **/
     private GameObject _player;
@@ -47,8 +41,6 @@ public class EnemyIA : MonoBehaviour {
 
         _transform = transform;
         _rigidbody = GetComponent<Rigidbody2D>();
-        
-        playerLastPos = this.transform.position;
     }
 
     private void Update() {
@@ -61,11 +53,13 @@ public class EnemyIA : MonoBehaviour {
         
         Vector2 lookingAt = selfPosition + transform.right.normalized;
         
-        Vector2 visionDirection = lookingAt - (Vector2) selfPosition;
-        Vector2 playerDirection = (Vector2)playerPosition - (Vector2) selfPosition;
+        Vector2 visionDirection = lookingAt - (Vector2)selfPosition;
+        Vector2 playerDirection = (Vector2)playerPosition - (Vector2)selfPosition;
         
         float distance = Vector3.Distance(playerPosition, selfPosition);
+        Distance = distance;
         float angle = Vector3.Angle(visionDirection, playerDirection);
+        Anglo = angle;
         if (distance < visionAreaLength && angle < visionAreaWide) {
             RaycastHit2D playerRay = Physics2D.Raycast(selfPosition, playerDirection, distance);
             if (playerRay.collider.gameObject.CompareTag("Player")) {
@@ -85,14 +79,14 @@ public class EnemyIA : MonoBehaviour {
             var decrementalAngle = (rotation - i) * Mathf.Deg2Rad;
             
             var leftPoint = visionAreaLength * new Vector2(
-                                Mathf.Cos(incrementalAngle),
-                                Mathf.Sin(incrementalAngle)
-                            ) + (Vector2)selfPosition;
+                Mathf.Cos(incrementalAngle),
+                Mathf.Sin(incrementalAngle)
+            ) + (Vector2)selfPosition;
             
             var rightPoint = visionAreaLength * new Vector2(
-                                 Mathf.Cos(decrementalAngle),
-                                 Mathf.Sin(decrementalAngle)
-                             ) + (Vector2)selfPosition;
+                 Mathf.Cos(decrementalAngle),
+                 Mathf.Sin(decrementalAngle)
+             ) + (Vector2)selfPosition;
             
             Debug.DrawLine(selfPosition, leftPoint, Color.blue);
             Debug.DrawLine(selfPosition, rightPoint, Color.blue);
@@ -101,14 +95,19 @@ public class EnemyIA : MonoBehaviour {
 
     private void OnActorView() {
         if (IsPlayerOnActorView()) {
-            if (!_onChase) {
+            if (!_onChase && !_onReturnPatrol) {
                 _lastSelfPosition = _transform.position;
             }
 
+            Vision = true;
+
             _onPatrol = false;
+            _onReturnPatrol = false;
             _onChase = true;
         }
         else if (_onChase) {
+            Vision = false;
+            
             _onChase = false;
             _onReturnPatrol = true;
         }
@@ -232,9 +231,6 @@ public class EnemyIA : MonoBehaviour {
     }
 
     private void RotateTowards(Vector2 target) {
-//        transform.right = target - (Vector2)transform.position;
-//        Debug.Log("ROTATE");
-//        
         Vector2 direction = target - (Vector2)transform.position;
         direction.Normalize();
         
